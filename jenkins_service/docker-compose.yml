@@ -1,0 +1,12 @@
+version: '2'
+services:
+  jenkinsinterface:
+    ports:
+      - "18004:18004"
+    image: jenkinsinterface:1.0
+    volumes:
+      - /home/osm/CommonConfigData.yaml:/home/osm/CommonConfigData.yaml
+      - /apps/logs/jenkins:/apps/logs/jenkins        
+    container_name: jenkinsinterface
+    environment:
+      - gateway=0.0.0.0
